@@ -3,23 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium PDF Showcase - Z Notes</title>
-    <meta name="description" content="Download and view premium programming notes and PDFs.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <title>Z Notes - Handbooks & Cheat Sheets</title>
+    <meta name="description" content="Download and view programming notes and PDFs.">
+    <!-- Using Inter font to match the clean look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Navbar matching the screenshot -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo">Z <span>Notes</span></a>
-            <div class="nav-links">
-                <a href="index.html" class="active">Home</a>
-                <a href="about.html">About</a>
-                <a href="privacy.html">Privacy Policy</a>
+            <div class="nav-left">
+                <a href="index.html" class="logo">&lt;/&gt; <span>Z Notes</span></a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="#">Courses</a>
+                    <a href="#">Tutorials</a>
+                    <a href="#">Blog</a>
+                    <a href="index.html" class="active">Notes</a>
+                    <a href="about.html">About</a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                    <span class="shortcut">⌘ K</span>
+                </div>
+                <a href="#" class="btn-outline">Login</a>
+                <a href="#" class="btn-outline">Signup</a>
+                <button class="theme-toggle"><i class="fa-regular fa-sun"></i></button>
             </div>
             <div class="hamburger">
                 <span></span>
@@ -27,201 +41,202 @@
                 <span></span>
             </div>
         </div>
-    </nav>
-
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Master Programming with <br><span>Important Notes</span></h1>
+        <!-- Secondary nav -->
+        <div class="sub-nav">
+            <div class="nav-container">
+                <a href="#">Start Learning <i class="fa-solid fa-chevron-down"></i></a>
+                <a href="#">Tutorials <i class="fa-solid fa-chevron-down"></i></a>
+            </div>
         </div>
-    </header>
+    </nav>
 
     <main class="container">
         <!-- HANDBOOKS SECTION -->
-        <h2 class="section-title">📚 Handbooks</h2>
+        <h2 class="section-title">Download Handbooks</h2>
         <section class="pdf-grid">
             
-            <div class="glass-card">
-                <div class="card-icon"><i class="fa-brands fa-python fa-2x"></i></div>
-                <h2>Python Handbook</h2>
-                <div class="card-actions">
-                    <a href="The Ultimate Python Handbook..pdf" target="_blank" class="btn btn-primary">View PDF</a>
-                    <a href="The Ultimate Python Handbook..pdf" download class="btn btn-secondary">Download</a>
+            <div class="card">
+                <div class="card-icon" style="color: #3776ab;">
+                    <i class="fa-brands fa-python"></i>
                 </div>
+                <h3>Python Handbook</h3>
+                <p>Download Handbook Here</p>
+                <a href="The Ultimate Python Handbook..pdf" download class="btn-download">Download</a>
             </div>
 
-            <div class="glass-card">
-                <div class="card-icon"><i class="fa-solid fa-c fa-2x"></i></div>
-                <h2>C Handbook</h2>
-                <div class="card-actions">
-                    <a href="The Ultimate C Handbook..pdf" target="_blank" class="btn btn-primary">View PDF</a>
-                    <a href="The Ultimate C Handbook..pdf" download class="btn btn-secondary">Download</a>
+            <div class="card">
+                <div class="card-icon" style="color: #00599C;">
+                    <i class="fa-solid fa-c"></i>
                 </div>
+                <h3>C Handbook</h3>
+                <p>Download Handbook Here</p>
+                <a href="The Ultimate C Handbook..pdf" download class="btn-download">Download</a>
             </div>
 
-            <div class="glass-card">
-                <div class="card-icon"><i class="fa-brands fa-html5 fa-2x"></i></div>
-                <h2>HTML Handbook</h2>
-                <div class="card-actions">
-                    <a href=" HTML handbook..pdf" target="_blank" class="btn btn-primary">View PDF</a>
-                    <a href=" HTML handbook..pdf" download class="btn btn-secondary">Download</a>
+            <div class="card">
+                <div class="card-icon" style="color: #E34F26;">
+                    <i class="fa-brands fa-html5"></i>
                 </div>
+                <h3>HTML Handbook</h3>
+                <p>Download Handbook Here</p>
+                <a href=" HTML handbook..pdf" download class="btn-download">Download</a>
             </div>
 
-            <div class="glass-card">
-                <div class="card-icon"><i class="fa-brands fa-git-alt fa-2x"></i></div>
-                <h2>Git Handbook</h2>
-                <div class="card-actions">
-                    <a href="Git_Handbook..pdf" target="_blank" class="btn btn-primary">View PDF</a>
-                    <a href="Git_Handbook..pdf" download class="btn btn-secondary">Download</a>
+            <div class="card">
+                <div class="card-icon" style="color: #4479A1;">
+                    <i class="fa-solid fa-database"></i>
                 </div>
+                <h3>MySQL Handbook</h3>
+                <p>Download Handbook Here</p>
+                <a href="MySQL Handbook..pdf" download class="btn-download">Download</a>
             </div>
 
-            <div class="glass-card">
-                <div class="card-icon"><i class="fa-solid fa-leaf fa-2x"></i></div>
-                <h2>MongoDB Handbook</h2>
-                <div class="card-actions">
-                    <a href="MongoDB Handbook..pdf" target="_blank" class="btn btn-primary">View PDF</a>
-                    <a href="MongoDB Handbook..pdf" download class="btn btn-secondary">Download</a>
+            <div class="card">
+                <div class="card-icon" style="color: #47A248;">
+                    <i class="fa-solid fa-leaf"></i>
                 </div>
+                <h3>MongoDB Handbook</h3>
+                <p>Download Handbook Here</p>
+                <a href="MongoDB Handbook..pdf" download class="btn-download">Download</a>
             </div>
 
-            <div class="glass-card">
-                <div class="card-icon"><i class="fa-solid fa-database fa-2x"></i></div>
-                <h2>MySQL Handbook</h2>
-                <div class="card-actions">
-                    <a href="MySQL Handbook..pdf" target="_blank" class="btn btn-primary">View PDF</a>
-                    <a href="MySQL Handbook..pdf" download class="btn btn-secondary">Download</a>
+            <div class="card">
+                <div class="card-icon" style="color: #F05032;">
+                    <i class="fa-brands fa-git-alt"></i>
                 </div>
+                <h3>Git Handbook</h3>
+                <p>Download Handbook Here</p>
+                <a href="Git_Handbook..pdf" download class="btn-download">Download</a>
             </div>
 
         </section>
 
         <!-- CHEAT SHEETS SECTION -->
-        <h2 class="section-title" style="margin-top: 4rem;">📝 Cheat Sheets</h2>
+        <h2 class="section-title" style="margin-top: 4rem;">Download Cheat Sheets</h2>
         <section class="pdf-grid">
 
-            <div class="glass-card">
-                <div class="card-icon"><i class="fa-brands fa-python fa-2x"></i></div>
-                <h2>Python</h2>
-                <div class="card-actions">
-                    <a href=" Python Cheatsheet.pdf" target="_blank" class="btn btn-primary">View</a>
-                    <a href=" Python Cheatsheet.pdf" download class="btn btn-secondary">Download</a>
+            <div class="card">
+                <div class="card-icon" style="color: #3776ab;">
+                    <i class="fa-brands fa-python"></i>
                 </div>
+                <h3>Python CheatSheet</h3>
+                <p>Download CheatSheet Here</p>
+                <a href=" Python Cheatsheet.pdf" download class="btn-download">Download</a>
             </div>
 
-            <div class="glass-card">
-                <div class="card-icon"><i class="fa-solid fa-c fa-2x"></i></div>
-                <h2>C Language</h2>
-                <div class="card-actions">
-                    <a href=" C Language CheatSheet.pdf" target="_blank" class="btn btn-primary">View</a>
-                    <a href=" C Language CheatSheet.pdf" download class="btn btn-secondary">Download</a>
+            <div class="card">
+                <div class="card-icon" style="color: #00599C;">
+                    <i class="fa-solid fa-c"></i>
                 </div>
+                <h3>C Language CheatSheet</h3>
+                <p>Download CheatSheet Here</p>
+                <a href=" C Language CheatSheet.pdf" download class="btn-download">Download</a>
             </div>
 
-            <div class="glass-card">
-                <div class="card-icon"><i class="fa-solid fa-code fa-2x"></i></div>
-                <h2>C++</h2>
-                <div class="card-actions">
-                    <a href=" C++ Cheatsheet.pdf" target="_blank" class="btn btn-primary">View</a>
-                    <a href=" C++ Cheatsheet.pdf" download class="btn btn-secondary">Download</a>
+            <div class="card">
+                <div class="card-icon" style="color: #00599C;">
+                    <i class="fa-solid fa-code"></i>
                 </div>
+                <h3>C++ CheatSheet</h3>
+                <p>Download CheatSheet Here</p>
+                <a href=" C++ Cheatsheet.pdf" download class="btn-download">Download</a>
             </div>
 
-            <div class="glass-card">
-                <div class="card-icon"><i class="fa-brands fa-css3-alt fa-2x"></i></div>
-                <h2>CSS</h2>
-                <div class="card-actions">
-                    <a href=" CSS Cheatsheet.pdf" target="_blank" class="btn btn-primary">View</a>
-                    <a href=" CSS Cheatsheet.pdf" download class="btn btn-secondary">Download</a>
+            <div class="card">
+                <div class="card-icon" style="color: #1572B6;">
+                    <i class="fa-brands fa-css3-alt"></i>
                 </div>
+                <h3>CSS CheatSheet</h3>
+                <p>Download CheatSheet Here</p>
+                <a href=" CSS Cheatsheet.pdf" download class="btn-download">Download</a>
             </div>
 
-            <div class="glass-card">
-                <div class="card-icon"><i class="fa-brands fa-html5 fa-2x"></i></div>
-                <h2>HTML</h2>
-                <div class="card-actions">
-                    <a href=" HTML Cheatsheet.pdf" target="_blank" class="btn btn-primary">View</a>
-                    <a href=" HTML Cheatsheet.pdf" download class="btn btn-secondary">Download</a>
+            <div class="card">
+                <div class="card-icon" style="color: #E34F26;">
+                    <i class="fa-brands fa-html5"></i>
                 </div>
+                <h3>HTML CheatSheet</h3>
+                <p>Download CheatSheet Here</p>
+                <a href=" HTML Cheatsheet.pdf" download class="btn-download">Download</a>
             </div>
 
-            <div class="glass-card">
-                <div class="card-icon"><i class="fa-brands fa-js fa-2x"></i></div>
-                <h2>JavaScript</h2>
-                <div class="card-actions">
-                    <a href=" JavaScript Cheatsheet.pdf" target="_blank" class="btn btn-primary">View</a>
-                    <a href=" JavaScript Cheatsheet.pdf" download class="btn btn-secondary">Download</a>
+            <div class="card">
+                <div class="card-icon" style="color: #F7DF1E;">
+                    <i class="fa-brands fa-js"></i>
                 </div>
+                <h3>JavaScript CheatSheet</h3>
+                <p>Download CheatSheet Here</p>
+                <a href=" JavaScript Cheatsheet.pdf" download class="btn-download">Download</a>
             </div>
 
-            <div class="glass-card">
-                <div class="card-icon"><i class="fa-brands fa-java fa-2x"></i></div>
-                <h2>Java</h2>
-                <div class="card-actions">
-                    <a href=" Java Cheatsheet.pdf" target="_blank" class="btn btn-primary">View</a>
-                    <a href=" Java Cheatsheet.pdf" download class="btn btn-secondary">Download</a>
+            <div class="card">
+                <div class="card-icon" style="color: #007396;">
+                    <i class="fa-brands fa-java"></i>
                 </div>
+                <h3>Java CheatSheet</h3>
+                <p>Download CheatSheet Here</p>
+                <a href=" Java Cheatsheet.pdf" download class="btn-download">Download</a>
             </div>
 
-            <div class="glass-card">
-                <div class="card-icon"><i class="fa-brands fa-php fa-2x"></i></div>
-                <h2>PHP</h2>
-                <div class="card-actions">
-                    <a href=" Php Cheatsheet.pdf" target="_blank" class="btn btn-primary">View</a>
-                    <a href=" Php Cheatsheet.pdf" download class="btn btn-secondary">Download</a>
+            <div class="card">
+                <div class="card-icon" style="color: #777BB4;">
+                    <i class="fa-brands fa-php"></i>
                 </div>
+                <h3>PHP CheatSheet</h3>
+                <p>Download CheatSheet Here</p>
+                <a href=" Php Cheatsheet.pdf" download class="btn-download">Download</a>
             </div>
 
-            <div class="glass-card">
-                <div class="card-icon"><i class="fa-solid fa-server fa-2x"></i></div>
-                <h2>Django</h2>
-                <div class="card-actions">
-                    <a href=" Django Cheatsheet.pdf" target="_blank" class="btn btn-primary">View</a>
-                    <a href=" Django Cheatsheet.pdf" download class="btn btn-secondary">Download</a>
+            <div class="card">
+                <div class="card-icon" style="color: #092E20;">
+                    <i class="fa-solid fa-server"></i>
                 </div>
+                <h3>Django CheatSheet</h3>
+                <p>Download CheatSheet Here</p>
+                <a href=" Django Cheatsheet.pdf" download class="btn-download">Download</a>
             </div>
 
-            <div class="glass-card">
-                <div class="card-icon"><i class="fa-solid fa-pepper-hot fa-2x"></i></div>
-                <h2>Flask</h2>
-                <div class="card-actions">
-                    <a href=" Flask Cheatsheet.pdf" target="_blank" class="btn btn-primary">View</a>
-                    <a href=" Flask Cheatsheet.pdf" download class="btn btn-secondary">Download</a>
+            <div class="card">
+                <div class="card-icon" style="color: #000000;">
+                    <i class="fa-solid fa-pepper-hot"></i>
                 </div>
+                <h3>Flask CheatSheet</h3>
+                <p>Download CheatSheet Here</p>
+                <a href=" Flask Cheatsheet.pdf" download class="btn-download">Download</a>
             </div>
 
-            <div class="glass-card">
-                <div class="card-icon"><i class="fa-brands fa-git-alt fa-2x"></i></div>
-                <h2>Git</h2>
-                <div class="card-actions">
-                    <a href=" Git_Cheatsheet.pdf" target="_blank" class="btn btn-primary">View</a>
-                    <a href=" Git_Cheatsheet.pdf" download class="btn btn-secondary">Download</a>
+            <div class="card">
+                <div class="card-icon" style="color: #F05032;">
+                    <i class="fa-brands fa-git-alt"></i>
                 </div>
+                <h3>Git CheatSheet</h3>
+                <p>Download CheatSheet Here</p>
+                <a href=" Git_Cheatsheet.pdf" download class="btn-download">Download</a>
             </div>
 
-            <div class="glass-card">
-                <div class="card-icon"><i class="fa-solid fa-leaf fa-2x"></i></div>
-                <h2>MongoDB</h2>
-                <div class="card-actions">
-                    <a href=" MongoDb Cheatsheet.pdf" target="_blank" class="btn btn-primary">View</a>
-                    <a href=" MongoDb Cheatsheet.pdf" download class="btn btn-secondary">Download</a>
+            <div class="card">
+                <div class="card-icon" style="color: #47A248;">
+                    <i class="fa-solid fa-leaf"></i>
                 </div>
+                <h3>MongoDB CheatSheet</h3>
+                <p>Download CheatSheet Here</p>
+                <a href=" MongoDb Cheatsheet.pdf" download class="btn-download">Download</a>
             </div>
 
-            <div class="glass-card">
-                <div class="card-icon"><i class="fa-solid fa-database fa-2x"></i></div>
-                <h2>MySQL</h2>
-                <div class="card-actions">
-                    <a href=" MySQL Cheatsheet.pdf" target="_blank" class="btn btn-primary">View</a>
-                    <a href=" MySQL Cheatsheet.pdf" download class="btn btn-secondary">Download</a>
+            <div class="card">
+                <div class="card-icon" style="color: #4479A1;">
+                    <i class="fa-solid fa-database"></i>
                 </div>
+                <h3>MySQL CheatSheet</h3>
+                <p>Download CheatSheet Here</p>
+                <a href=" MySQL Cheatsheet.pdf" download class="btn-download">Download</a>
             </div>
 
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Z Notes. All rights reserved. | <a href="privacy.html">Privacy Policy & Disclaimer</a></p>
+        <p>&copy; 2026 Z Notes. All rights reserved. | <a href="privacy.html">Privacy Policy</a></p>
     </footer>
 
     <script src="script.js"></script>
