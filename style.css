@@ -1,18 +1,18 @@
 :root {
-    --bg-color: #0f172a;
-    --card-bg: rgba(255, 255, 255, 0.03);
-    --card-border: rgba(255, 255, 255, 0.08);
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --accent-1: #8b5cf6;
-    --accent-2: #ec4899;
+    --bg-color: #faf9f8; /* Microsoft Fluent light gray */
+    --card-bg: #ffffff;
+    --card-border: #e1dfdd;
+    --text-primary: #323130;
+    --text-secondary: #605e5c;
+    --accent-1: #0078d4; /* Microsoft Blue */
+    --accent-2: #005a9e; /* Darker Blue for hover */
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
 }
 
 body {
@@ -25,46 +25,14 @@ body {
     flex-direction: column;
 }
 
-/* Background Blobs for Premium Feel */
-.blob {
-    position: absolute;
-    filter: blur(80px);
-    z-index: -1;
-    opacity: 0.5;
-    animation: float 10s infinite alternate ease-in-out;
-}
-
-.blob-1 {
-    top: -100px;
-    left: -100px;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, var(--accent-1) 0%, transparent 70%);
-}
-
-.blob-2 {
-    bottom: -100px;
-    right: -100px;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, var(--accent-2) 0%, transparent 70%);
-    animation-delay: -5s;
-}
-
-@keyframes float {
-    0% { transform: translate(0, 0) scale(1); }
-    100% { transform: translate(30px, 50px) scale(1.1); }
-}
-
 /* Navbar */
 .navbar {
-    padding: 1.5rem 2rem;
-    background: rgba(15, 23, 42, 0.7);
-    backdrop-filter: blur(12px);
+    padding: 1rem 2rem;
+    background: #ffffff;
+    box-shadow: 0 1.6px 3.6px 0 rgba(0,0,0,0.132), 0 0.3px 0.9px 0 rgba(0,0,0,0.108);
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 1px solid var(--card-border);
 }
 
 .nav-container {
@@ -76,15 +44,14 @@ body {
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: 800;
+    font-size: 1.25rem;
+    font-weight: 600;
     color: var(--text-primary);
     text-decoration: none;
-    letter-spacing: 1px;
 }
 
 .logo span {
-    color: var(--accent-2);
+    color: var(--accent-1);
 }
 
 .nav-links {
@@ -96,11 +63,11 @@ body {
     color: var(--text-secondary);
     text-decoration: none;
     font-weight: 400;
-    transition: color 0.3s ease;
+    font-size: 0.9rem;
 }
 
 .nav-links a:hover, .nav-links a.active {
-    color: var(--text-primary);
+    color: var(--accent-1);
 }
 
 /* Hamburger Menu */
@@ -115,26 +82,23 @@ body {
     width: 25px;
     height: 2px;
     background-color: var(--text-primary);
-    transition: 0.3s;
 }
 
 /* Hero Section */
 .hero {
     text-align: center;
-    padding: 5rem 1.5rem;
+    padding: 4rem 1.5rem;
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--card-border);
+    margin-bottom: 3rem;
 }
 
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: 2.8rem;
     line-height: 1.2;
-    margin-bottom: 1rem;
-    font-weight: 800;
-}
-
-.gradient-text {
-    background: linear-gradient(to right, var(--accent-1), var(--accent-2));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
 }
 
 .hero p {
@@ -150,28 +114,34 @@ body {
     margin: 0 auto;
     padding: 0 1.5rem 4rem 1.5rem;
     flex: 1;
+    width: 100%;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    font-weight: 600;
 }
 
 .pdf-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
 }
 
-/* Glassmorphism Card */
+/* Classic Solid Card */
 .glass-card {
     background: var(--card-bg);
-    backdrop-filter: blur(16px);
     border: 1px solid var(--card-border);
-    border-radius: 20px;
-    padding: 2rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 4px;
+    padding: 1.5rem;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .glass-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 3.2px 7.2px 0 rgba(0,0,0,0.132), 0 0.6px 1.8px 0 rgba(0,0,0,0.108);
+    transform: translateY(-2px);
 }
 
 .full-width {
@@ -184,106 +154,89 @@ body {
 }
 
 .card-icon {
-    width: 50px;
-    height: 50px;
-    background: rgba(236, 72, 153, 0.1);
-    color: var(--accent-2);
-    border-radius: 12px;
+    width: 40px;
+    height: 40px;
+    color: var(--accent-1);
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-}
-
-.card-icon svg {
-    width: 24px;
-    height: 24px;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
 }
 
 .glass-card h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0.8rem;
-    font-weight: 600;
-}
-
-.glass-card h3 {
-    color: var(--accent-2);
+    font-size: 1.2rem;
     margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
 }
 
 .glass-card p {
     color: var(--text-secondary);
-    line-height: 1.6;
+    line-height: 1.5;
     margin-bottom: 1.5rem;
+    font-size: 0.95rem;
 }
 
 /* Buttons */
 .card-actions {
     display: flex;
-    gap: 1rem;
+    gap: 0.8rem;
     flex-wrap: wrap;
 }
 
 .btn {
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    border-radius: 2px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    border: none;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
     cursor: pointer;
     text-align: center;
     flex: 1;
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+    background-color: var(--accent-1);
     color: white;
-    box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
 }
 
 .btn-primary:hover {
-    opacity: 0.9;
-    box-shadow: 0 6px 20px rgba(236, 72, 153, 0.4);
+    background-color: var(--accent-2);
 }
 
 .btn-secondary {
-    background: rgba(255, 255, 255, 0.05);
+    background-color: transparent;
     color: var(--text-primary);
     border: 1px solid var(--card-border);
 }
 
 .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.btn-disabled {
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--text-secondary);
-    cursor: not-allowed;
+    background-color: #f3f2f1;
 }
 
 /* Footer */
 footer {
     text-align: center;
     padding: 2rem;
+    background-color: #ffffff;
     border-top: 1px solid var(--card-border);
     margin-top: auto;
 }
 
 footer p {
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 footer a {
-    color: var(--text-secondary);
+    color: var(--accent-1);
     text-decoration: none;
 }
 
 footer a:hover {
-    color: var(--text-primary);
+    text-decoration: underline;
 }
 
 /* Responsive - Mobile Optimization */
@@ -298,11 +251,11 @@ footer a:hover {
         top: 100%;
         left: 0;
         width: 100%;
-        background: rgba(15, 23, 42, 0.95);
-        backdrop-filter: blur(12px);
+        background: #ffffff;
         flex-direction: column;
         padding: 1rem 2rem;
         gap: 1rem;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         border-bottom: 1px solid var(--card-border);
     }
 
@@ -311,39 +264,29 @@ footer a:hover {
     }
 
     .hero {
-        padding: 3rem 1rem;
+        padding: 2rem 1rem;
+        margin-bottom: 2rem;
     }
 
     .hero h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .pdf-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 1rem;
     }
 
     .glass-card {
-        padding: 1.5rem;
+        padding: 1.25rem;
     }
 
     .card-actions {
         flex-direction: column;
-        gap: 0.8rem;
+        gap: 0.5rem;
     }
 
     .btn {
         width: 100%;
     }
-    
-    .section-title {
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
-    }
-}
-
-.section-title {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    text-align: center;
 }
