@@ -254,8 +254,14 @@ body {
     margin-bottom: 1.5rem;
 }
 
-.btn-download {
+.card-actions {
+    display: flex;
+    gap: 0.8rem;
     width: 100%;
+}
+
+.btn-download {
+    flex: 1;
     background: var(--btn-bg);
     color: var(--text-primary);
     padding: 0.75rem;
@@ -264,10 +270,20 @@ body {
     font-weight: 600;
     font-size: 0.9rem;
     transition: background 0.2s;
+    text-align: center;
 }
 
 .btn-download:hover {
     background: var(--btn-hover);
+}
+
+.btn-view {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+}
+
+.btn-view:hover {
+    background: #f9fafb;
 }
 
 /* Footer */
