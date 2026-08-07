@@ -1,35 +1,66 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
+// Script for Z Notes 
+document.addEventListener("DOMContentLoaded", () => {
+    // Hamburger menu toggle
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
 
-    if (hamburger && navLinks) {
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            
-            // Toggle hamburger animation
-            const spans = hamburger.querySelectorAll('span');
-            if (navLinks.classList.contains('active')) {
-                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-                spans[1].style.opacity = '0';
-                spans[2].style.transform = 'rotate(-45deg) translate(5px, -6px)';
-            } else {
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
-            }
+    if (hamburger) {
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
         });
     }
 
-    // Add subtle hover effect to cards based on mouse position
-    const cards = document.querySelectorAll('.glass-card');
-    cards.forEach(card => {
-        card.addEventListener('mousemove', e => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            card.style.setProperty('--mouse-x', `${x}px`);
-            card.style.setProperty('--mouse-y', `${y}px`);
-        });
-    });
+    // Canvas Animation
+    const canvas = document.getElementById("animCanvas");
+    if (canvas) {
+        const ctx = canvas.getContext("2d");
+        const totalFrames = 300;
+        const images = [];
+        let loadedFrames = 0;
+        let currentFrame = 0;
+
+        // Load all frames
+        for (let i = 1; i <= totalFrames; i++) {
+            const img = new Image();
+            // Format number to 3 digits (e.g., 001, 012, 300)
+            const frameNum = String(i).padStart(3, '0');
+            img.src = `animation_frames/ezgif-frame-${frameNum}.jpg`;
+            img.onload = () => {
+                loadedFrames++;
+                if (loadedFrames === 1) {
+                    // Draw first frame immediately as fallback
+                    drawFrame(img);
+                }
+                if (loadedFrames === totalFrames) {
+                    // All frames loaded, start animation
+                    requestAnimationFrame(playAnimation);
+                }
+            };
+            images.push(img);
+        }
+
+        // Draw a specific frame to canvas
+        function drawFrame(img) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            // Draw image covering the canvas (you can adjust scaling based on actual image aspect ratio)
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        }
+
+        let lastTime = 0;
+        const fps = 24;
+        const interval = 1000 / fps;
+
+        function playAnimation(timestamp) {
+            if (!lastTime) lastTime = timestamp;
+            const delta = timestamp - lastTime;
+
+            if (delta > interval) {
+                drawFrame(images[currentFrame]);
+                currentFrame = (currentFrame + 1) % totalFrames;
+                lastTime = timestamp - (delta % interval);
+            }
+
+            requestAnimationFrame(playAnimation);
+        }
+    }
 });
